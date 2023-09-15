@@ -36,7 +36,6 @@ const products = [
 export default function Cart() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [open, setOpen] = useState(true);
   return (
     <>
       <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -67,8 +66,8 @@ export default function Cart() {
                     </p>
                   </div>
                   <div className="flex flex-1 items-end justify-between text-sm">
-                    <div className="text-gray-500">
-                    <label htmlFor="quantity" className="inline mr-4 text-sm font-medium leading-6 text-gray-900">
+                    <div className="text-gray-500">Qty
+                    <label htmlFor="quantity" className="block text-sm font-medium leading-6 text-gray-900">
                   Qty
                 </label>
                       <select>
@@ -104,12 +103,9 @@ export default function Cart() {
           Shipping and taxes calculated at checkout.
         </p>
         <div className="mt-6">
-          <a
-            href="#"
-            className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-          >
+          <Link to="/checkout" className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
             Checkout
-          </a>
+          </Link>
         </div>
         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
           <p>
@@ -118,12 +114,11 @@ export default function Cart() {
             <button
               type="button"
               className="font-medium text-indigo-600 hover:text-indigo-500"
-              onClick={() => setOpen(false)}
             >
               Continue Shopping
               <span aria-hidden="true"> &rarr;</span>
-                </button>
-                </Link>
+              </button>
+              </Link>
           </p>
         </div>
         </div>

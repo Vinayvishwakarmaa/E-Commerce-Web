@@ -1,6 +1,7 @@
 // import { Counter } from './features/counter/Counter';
 import './App.css';
 import CartPage from './pages/CartPage';
+import Checkout from './pages/Checkout';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -30,9 +31,13 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignupPage/>,
   },
-  { // Only for testing -then page will be added 
+  {
     path: "/cart",
     element: <CartPage/>,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout/>,
   },
 ]);
 
