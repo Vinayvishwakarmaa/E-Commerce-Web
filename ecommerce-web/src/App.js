@@ -7,7 +7,6 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 
 
-
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -16,28 +15,34 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import ProductDetailPage from './pages/ProductDetailPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,  
+    element: <Home />,
   },
   {
     path: "/login",
-    element: <LoginPage/>,
+    element: <LoginPage />,
   },
   {
     path: "/signup",
-    element: <SignupPage/>,
+    element: <SignupPage />,
   },
   {
     path: "/cart",
-    element: <CartPage/>,
+    element: <CartPage />,
   },
   {
     path: "/checkout",
-    element: <Checkout/>,
+    element: <Checkout />,
+  },
+
+  {
+    path: "/product-detail",
+    element: <ProductDetailPage/>,
   },
 ]);
 
