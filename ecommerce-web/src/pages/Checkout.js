@@ -11,7 +11,7 @@ const products = [
     color: "Salmon",
     price: "$90.00",
     quantity: 1,
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
     imageAlt:
       "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
@@ -23,7 +23,7 @@ const products = [
     color: "Blue",
     price: "$32.00",
     quantity: 1,
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
     imageAlt:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
@@ -214,25 +214,24 @@ function Checkout() {
                 </div>
               </div>
 
-              
               <div className="mt-6 flex items-center justify-end gap-x-6">
-              <button
-                type="button"
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                Reset
-              </button>
-              <button
-                type="submit"
-                className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Add Address
-              </button>
-            </div>
+                <button
+                  type="button"
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Reset
+                </button>
+                <button
+                  type="submit"
+                  className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Add Address
+                </button>
+              </div>
 
               <div className="border-b border-gray-900/10 pb-12">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">
-                   Addresses
+                  Addresses
                 </h2>
                 <p className="mt-1 text-sm leading-6 text-gray-600">
                   Choose from Existing address
@@ -242,7 +241,8 @@ function Checkout() {
                   {addresses.map((address) => (
                     <li
                       key={address.email}
-                      className="flex justify-between gap-x-6 px-5 py-5 border-solid border-2 border-gray-300">
+                      className="flex justify-between gap-x-6 px-5 py-5 border-solid border-2 border-gray-300"
+                    >
                       <div className="flex min-w-0 gap-x-4">
                         <input
                           name="address"
@@ -263,7 +263,7 @@ function Checkout() {
                       </div>
                       <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                         <p className="text-sm leading-6 text-gray-900">
-                         Phone:{address.phone}
+                          Phone:{address.phone}
                         </p>
                         <p className="text-sm leading-6 text-gray-500">
                           {address.city}
@@ -272,7 +272,6 @@ function Checkout() {
                     </li>
                   ))}
                 </ul>
-
 
                 <div className="mt-10 space-y-10">
                   <fieldset>
@@ -316,8 +315,6 @@ function Checkout() {
                 </div>
               </div>
             </div>
-
-          
           </form>
         </div>
         <div className="lg:col-span-2">
@@ -332,7 +329,7 @@ function Checkout() {
                     <li key={product.id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         <img
-                          src={product.imageSrc}
+                          src={product.thumbnail}
                           alt={product.imageAlt}
                           className="h-full w-full object-cover object-center"
                         />
